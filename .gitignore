@@ -1,0 +1,8 @@
+*.gif
+*.html
+**/venv/
+**/build/
+*.pkl
+*.csv
+**/__pycache__/
+**/env/
