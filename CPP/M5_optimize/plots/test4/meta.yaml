@@ -1,0 +1,16 @@
+comp_time: 36.63
+iterations_main: 100 #capped
+sub_iterations: 800
+init:
+  mfpstb: 4000.0
+  mfpps: 2000.0     
+  maftstb: 4000.0       
+  maftps: 1000.0
+final:
+  mfpstb: 0.0
+  mfpps: 10000.0     
+  maftstb: 0.0       
+  maftps: 10000.0
+weighting: 
+  phi: 10.0
+  theta: 1.0
