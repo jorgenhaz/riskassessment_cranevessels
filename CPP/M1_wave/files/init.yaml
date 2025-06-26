@@ -1,0 +1,33 @@
+# Global positions
+x: 0.0 
+y: 0.0 
+z: 0.536 
+phi: 0.0 
+theta: 0.0 
+psi: 0.0 
+# Omega
+u:
+v:
+w:
+p:
+q:
+r:
+# Tau
+taux:
+tauy:
+tauz:
+tauphi:
+tautheta:
+taupsi:
+# Tanks
+mfpstb: 2500
+mfpps: 2500
+maftstb: 2500
+maftps: 2500
+# Momentum
+px:
+py:
+pz:
+pphi:
+ptheta:
+ppsi:
