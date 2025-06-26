@@ -1,0 +1,25 @@
+x: 0
+y: 0
+z: [0.528 , 0.548] #equilibrium M1,M2 and M3,M4,M5
+phi: 0.0
+theta: 0.0
+psi: 0
+q1: -1.0
+q2: 1.0
+q3: -0.6
+q4: 2.0
+q1_p: 0
+q2_p: -0.4
+m_payload: 2000
+l_wire: 3.0
+mfpstb: 1000
+mfpps: 1000
+maftstb: 1000
+maftps: 6000
+
+times:
+  M1: 0.11
+  M2: 0.02
+  M3: 1.00
+  M4: 0.90
+  M5: 0.15

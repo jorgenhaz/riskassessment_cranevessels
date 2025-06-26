@@ -1,0 +1,35 @@
+x: 0
+y: 0
+z: [0.536 , 0.556] #equilibrium M1,M2 and M3,M4,M5
+phi: 0.0
+theta: 0.0
+psi: 0
+q1: -1.0
+q2: 1.0
+q3: -0.6
+q4: 2.0
+q1_p: 0
+q2_p: -0.4
+m_payload: 2000
+l_wire: 3.0
+maftps: 2500
+maftstb: 2500
+mfpps: 2500
+mfpstb: 2500
+wave_data:
+  Hs: 0.5             # Significant wave height
+  Tp: 7.0             # Peak wave period
+  gamma: 3.3          # Peak shape parameter
+  N: 100              # Number of components
+  f_min: 0.06         # Min frequency
+  f_max: null         # Max frequency
+boat_sections:
+  sections_width: 15  # Transversal number of panels
+  sections_length: 30 # Longitudinal number of panels
+wave_angle: 0.785398163 # 45 degrees
+times:
+  M1: 20.12
+  M2: 20.27
+  M3: 73.31
+  M4: 72.97
+  M5: 20.49
