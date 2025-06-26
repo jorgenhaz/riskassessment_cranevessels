@@ -1,0 +1,6 @@
+dt: 0.0001
+tol: 1e-06
+safety: 0.9
+simulation_time: 100.0
+file_name: cpp_gui/plots/gui_test_3.csv
+wave_angle: 0.785398163
