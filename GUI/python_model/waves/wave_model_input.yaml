@@ -1,0 +1,8 @@
+Hs: 0.5             # Significant wave height
+Tp: 4.0             # Peak wave period
+gamma: 3.3          # Peak shape parameter
+N: 100              # Number of components
+f_min: 0.12         # Min frequency
+f_max:              # Max frequency
+sections_width: 15  # Transversal number of panels
+sections_length: 30 # Longitudinal number of panels
