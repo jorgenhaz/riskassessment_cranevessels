@@ -4,12 +4,6 @@ import numpy as np
 from dataclasses import dataclass
 from typing import ClassVar
 
-"""
-Note that all r, are the vectors going from CO to whatever the object is. The CO is located at
-the center of the surface pointing upwards on the boat.
-The frame of the body (where the origin is the CO) has z pointing down (as with NED). x and y follows SNAME (surge, sway)
-"""
-
 @dataclass
 class BoatParams:
     mass: float = 60000

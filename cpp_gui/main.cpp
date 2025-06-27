@@ -33,24 +33,6 @@ int main(int argc, char const *argv[]) {
 
     CSV::CSV_Writer writer(file_name, header);
 
-    //____________________________________________________________________
-    Eigen::VectorXd q_dot_init(6);
-    q_dot_init << 0.0, 0.0, 0.0, 0.0, 0.0, 0.0;
-
-    // Mass and transformation matrices
-    Eigen::VectorXd y_vec = Eigen::Map<Eigen::VectorXd>(y_val.data(), y_val.size());
-    Eigen::MatrixXd B = mass_inertia(y_vec);
-    Eigen::MatrixXd beta_mat = beta(y_vec);
-    // Calculate p = B * beta⁻¹ * q_dot
-    Eigen::VectorXd p = B * beta_mat.fullPivLu().solve(q_dot_init);
-
-    // Insert p into y_val starting at index 25
-    for (int i = 0; i < 6; ++i) {
-        y_val[22 + i] = p[i];
-    }
-
-    //_________________________________________________________
-
     if (argc == y_val.size() + 1){
         std::vector<double> arg_values;
         double value;

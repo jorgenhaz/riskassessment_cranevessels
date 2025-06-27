@@ -2,7 +2,7 @@ from datetime import datetime
 from sympy import *
 from model_generation.kinematics.transformations import*
 import model_generation.cpp_write.cpp_write as cppw
-import model_generation.models.model_5.quasi_variable_cog.params as pm
+import model_generation.models.M5.variable_cg.params as pm
 from GUI.python_model.waves.wave_utils import jonswap_spectrum, dynamical_pressure_field, wave_accelerations
 import yaml
 import numpy as np

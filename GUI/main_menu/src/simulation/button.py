@@ -8,7 +8,5 @@ def simulation_button(self_ptr, group, x,y, batch):
         batch=batch, group=group)
     
     button.on_press = lambda w: simulation_menu_action(self_ptr, w)
-    
-    #self_ptr.push_handlers(button)
 
     return button

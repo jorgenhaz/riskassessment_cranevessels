@@ -52,7 +52,7 @@ int main(int argc, char const *argv[]) {
     writer.openFile();
 
     auto simulate = [&](std::vector<double>& y) {
-    double t_local = 0.0;                 // <- egen klokke
+    double t_local = 0.0;                 
     run_sim(writer, y, t_local, dt, tol, safety, simulation_time);
         };
     for (int iter = 0; iter < max_iter; iter++){

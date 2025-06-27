@@ -3,8 +3,6 @@ from pathlib import Path
 from ruamel.yaml import YAML
 from GUI.utils.popup.popup import ParamPopup 
 
-   
-
 def set_wave_params(window, _widget):
     yaml_rt = YAML()                         
     CFG     = Path("GUI/python_model/waves/wave_model_input.yaml") 

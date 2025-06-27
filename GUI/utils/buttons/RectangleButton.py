@@ -53,9 +53,9 @@ class RectangleButton(pyglet.event.EventDispatcher):
         self.current_color = color
         self.background.color = color
 
-    """
-    Functions underneath are called by the window if the button is pushed to event-handlers
-    """
+    
+    # Functions underneath are called by the window if the button is pushed to event-handlers
+    
 
     """Hover color"""
     def on_mouse_motion(self, x, y, dx, dy):

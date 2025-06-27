@@ -36,5 +36,5 @@ def plot_simulation_action(self_window_ptr, widget, self_ptr):
     ]
 
     popup = MessagePopup(self_window_ptr, lines, title="Simulation stats")
-    self_window_ptr.push_handlers(popup)   # for klikk / Esc
+    self_window_ptr.push_handlers(popup)   
     self_window_ptr.invalid = True

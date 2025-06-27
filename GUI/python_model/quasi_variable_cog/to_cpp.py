@@ -13,7 +13,7 @@ from model_generation.kinematics.joint_type import JointType
 from model_generation.kinematics.jacobian import jacobian
 import model_generation.cpp_write.cpp_write as cppw
 from model_generation.utils.utils import pad_matrix, inverse_se3
-import model_generation.models.model_5.quasi_variable_cog.params as pm
+import model_generation.models.M5.variable_cg.params as pm
 
 startTimeTotal = datetime.now()
 
@@ -145,8 +145,6 @@ r_boat_cog = (
     + m_fp_stb * r_tank_fp_stb
 ) / mass_boat
 
-
-# Vektorer fra tank-CG til total COG (for parallellakseteoremet)
 def parallel_axis(I_local, m, r):
     r_outer = r * r.T
     r_squared = (r.T * r)[0]
@@ -263,15 +261,13 @@ K6[2,2] =  C_z         # heave
 K6[3,3] =  C_phi       # roll
 K6[4,4] =  C_theta     # pitch
 
-K6[2,4] =  -C_z * r_boat_cog[0] ;  K6[4,2] = K6[2,4] # Using the CG as the LCF will kind of move the same direction when this moves
-
 restoring_forces = K6 * q
 
 # Gravitational
 z_G_ned = (T_n_b * r_boat_cog.col_join(Matrix([1])))[2, 0]   
 P_g = -m_tot * g * z_G_ned   
 
-# Potensional energy
+# Potential energy
 P = P_g 
 P_diff_q = P.diff(q)
 

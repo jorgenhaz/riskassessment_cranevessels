@@ -3,7 +3,7 @@ from sympy.physics.mechanics import*
 from model_generation.kinematics.transformations import*
 import numpy as np
 from model_generation.plotting.plotting_3d import plot_3dframes, numpify, evaluate_frames, draw_frame_line, plot_point, draw_prism, draw_text_in_frame
-import model_generation.models.model_5.quasi_variable_cog.params as pm
+import model_generation.models.M5.variable_cg.params as pm
 import plotly.graph_objects as go
 import model_generation.utils.utils as util
 import yaml
@@ -78,10 +78,10 @@ fig.update_layout(
     )
 )
 fig.update_layout(
-    paper_bgcolor='white',       # hele figur­området
-    plot_bgcolor='white',        # selve “canvaset”
+    paper_bgcolor='white',       
+    plot_bgcolor='white',        
     scene=dict(
-        bgcolor='white',         # 3-D-scenen
+        bgcolor='white',       
         xaxis=dict(showbackground=False,
                    showgrid=False, zeroline=False, visible=False),
         yaxis=dict(showbackground=False,
@@ -90,7 +90,7 @@ fig.update_layout(
                    showgrid=False, zeroline=False, visible=False),
         aspectmode='data'
     ),
-    margin=dict(l=0, r=0, b=0, t=0)  # fjern ramme
+    margin=dict(l=0, r=0, b=0, t=0)  
 )
 
 

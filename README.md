@@ -7,3 +7,9 @@ python -m model_generation.euler_boat.euler_boat_quasi
 
 ## Venv for Python
 Two venvs - requirements found in txt-files in root. 
+
+## Cpp
+See respective readme-files.
+
+## Models
+Models from the thesis are found in /model_generation/models

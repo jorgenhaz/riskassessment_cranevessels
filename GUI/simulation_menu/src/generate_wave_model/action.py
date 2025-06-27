@@ -52,6 +52,4 @@ def generate_wave_model_action (self, widget):
             pyglet.clock.schedule_once(update_status, 0)
             pyglet.clock.schedule_once(hide_status, 2)
 
-
-        # Start thread - daemon=True quits when GUI closes
         threading.Thread(target=worker, daemon=True).start()

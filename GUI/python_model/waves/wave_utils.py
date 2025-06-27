@@ -58,9 +58,6 @@ def dynamical_pressure_field(Hs, Tp, gamma=3.3, N=100, f_min=0.05, f_max=0.3125)
     return Matrix([p_D]), S_omega, omega, a, epsilons
 
 def wave_accelerations(omega, a, epsilons):
-    """
-    
-    """
     g = 9.81
     a_x = 0
     a_y = 0

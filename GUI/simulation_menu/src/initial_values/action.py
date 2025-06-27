@@ -1,4 +1,3 @@
-# simulation_menu/src/set_params/action.py
 from pathlib import Path
 from ruamel.yaml import YAML
 from GUI.utils.popup.popup import ParamPopup 

@@ -8,7 +8,5 @@ def plot_simulation_button(self_window_ptr, group, x,y, batch,self_ptr):
         batch=batch, group=group)
     
     button.on_press = lambda w: plot_simulation_action(self_window_ptr, w, self_ptr)
-    
-    #self_ptr.push_handlers(button)
 
     return button

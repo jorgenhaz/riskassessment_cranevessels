@@ -9,6 +9,4 @@ def change_user_name_button(self_ptr, group, x,y, batch):
     
     button.on_press = lambda w: change_user_name_action(self_ptr, w, group=group, batch=batch, x=(x+200), y=(y+25))
     
-    #self_ptr.push_handlers(button)
-
     return button

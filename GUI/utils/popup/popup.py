@@ -34,7 +34,6 @@ class ParamPopup(pyglet.event.EventDispatcher):
             color=(255, 255, 255, 255),
             batch=self.batch
         )
-        # Image related end
 
         self.fields = []
         max_rows = 15           

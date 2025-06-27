@@ -9,6 +9,4 @@ def show_model_button(self_window_ptr, group, x,y, batch,self_ptr):
     
     button.on_press = lambda w: show_model_action(self_window_ptr, w)
     
-    #self_ptr.push_handlers(button)
-
     return button
