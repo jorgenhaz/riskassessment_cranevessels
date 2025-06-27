@@ -189,12 +189,12 @@ def draw_prism (fig: go.Figure(), T, length, width, height, color = 'blue', opac
     x, y, z =compute_vertices(T, L, W, H, offset)
 
     faces = [
-    [0, 1, 2], [0, 2, 3],  # Bunn
-    [4, 5, 6], [4, 6, 7],  # Topp
-    [0, 1, 5], [0, 5, 4],  # Side 1
-    [1, 2, 6], [1, 6, 5],  # Side 2
-    [2, 3, 7], [2, 7, 6],  # Side 3
-    [3, 0, 4], [3, 4, 7]   # Side 4
+    [0, 1, 2], [0, 2, 3], 
+    [4, 5, 6], [4, 6, 7],  
+    [0, 1, 5], [0, 5, 4],  
+    [1, 2, 6], [1, 6, 5],  
+    [2, 3, 7], [2, 7, 6],  
+    [3, 0, 4], [3, 4, 7]   
     ]
 
         
@@ -214,8 +214,8 @@ def compute_vertices(T, L, W, H, offset=np.array([0,0,0])):
 
     # Define corners in local frame
     local_vertices = np.array([
-        [-L, -W, -H], [L, -W, -H], [L, W, -H], [-L, W, -H],  # Bunn
-        [-L, -W, H],  [L, -W, H],  [L, W, H],  [-L, W, H]     # Topp
+        [-L, -W, -H], [L, -W, -H], [L, W, -H], [-L, W, -H],  
+        [-L, -W, H],  [L, -W, H],  [L, W, H],  [-L, W, H]     
     ]).T  # Transpose for correct shape
 
     # Adjust corners with center-offset argument
@@ -333,27 +333,22 @@ def draw_text_in_frame(fig: go.Figure, T, local_position, text, color='black', s
     ))
 
 def draw_arrow(fig: go.Figure, T, origin, direction, color='black', shaft_width=5, head_length=0.05):
-    """
-    Tegner en pil som peker mot 'origin' fra 'origin + direction', transformert med T.
-    """
-    # Lokalpunkter
+
     end_local = np.append(origin, 1)
     start_local = np.append(np.array(origin) + np.array(direction), 1)
 
-    # Globale punkter
     start_global = T @ start_local
     end_global = T @ end_local
 
-    # Retning
+
     head_dir = end_global[:3] - start_global[:3]
     norm = np.linalg.norm(head_dir)
     if norm < 1e-8:
-        return  # Ikke tegn pil – den har ingen retning
+        return  
     head_dir = head_dir / norm
     head_base = end_global[:3] - head_length * head_dir
     head_tip = end_global[:3]
 
-    # Skaft
     fig.add_trace(go.Scatter3d(
         x=[start_global[0], head_base[0]],
         y=[start_global[1], head_base[1]],
@@ -363,7 +358,6 @@ def draw_arrow(fig: go.Figure, T, origin, direction, color='black', shaft_width=
         showlegend=False
     ))
 
-    # Pilhode
     ortho = np.cross(head_dir, [0, 0, 1])
     if np.linalg.norm(ortho) < 1e-3:
         ortho = np.cross(head_dir, [0, 1, 0])
@@ -385,17 +379,12 @@ def draw_arrow(fig: go.Figure, T, origin, direction, color='black', shaft_width=
 
 
 def draw_curved_arrow(fig: go.Figure, T_start, T_end, color='black', shaft_width=4, head_length=0.05, steps=50, curve_height=0.15):
-    """
-    Tegner en kurvet pil fra z-aksen på T_start til z-aksen på T_end.
-    """
-    # Start- og sluttpunkt på Z-aksene
+
     p0 = T_start[:3, 3] + T_start[:3, 2] * 0.3
     p1 = T_end[:3, 3] + T_end[:3, 2] * 0.3
 
-    # Løft buen opp i Z-retning for å gjøre den synlig
     mid = (p0 + p1) / 2 + np.array([0, 0, curve_height])
 
-    # Bézier-kurve
     t = np.linspace(0, 1, steps)
     bezier = (
         (1 - t)[:, None]**2 * p0 +
@@ -403,7 +392,6 @@ def draw_curved_arrow(fig: go.Figure, T_start, T_end, color='black', shaft_width
         t[:, None]**2 * p1
     )
 
-    # Tegn skaftet
     fig.add_trace(go.Scatter3d(
         x=bezier[:, 0],
         y=bezier[:, 1],
@@ -413,7 +401,6 @@ def draw_curved_arrow(fig: go.Figure, T_start, T_end, color='black', shaft_width
         showlegend=False
     ))
 
-    # Pilhode i enden
     head_tip = bezier[-1]
     head_base = bezier[-2]
 

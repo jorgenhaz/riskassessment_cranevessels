@@ -21,32 +21,3 @@ def jacobian(transformList, rotAxList, jointTypeList, jointVec):
             jac[3:6, i] = Matrix([0, 0, 0]) 
 
     return jac
-
-
-# from sympy import *
-# from model_generation.kinematics.joint_type import JointType
-
-# def jacobian(transformList, rotAxList, jointTypeList, jointVec):
-#     n = len(transformList)
-#     jac = zeros(6, n) 
-#     T_n = transformList[-1]  
-#     O_n = Matrix([T_n[i, 3] for i in range(3)]) 
-
-#     for i in range(n):
-#         if i == 0:
-#             rot_axis_global = rotAxList[0]
-#             p_prev = Matrix([0, 0, 0]) 
-#         else:
-#             T_prev = transformList[i - 1] 
-#             R_prev = T_prev[:3, :3]  
-#             p_prev = Matrix([T_prev[j, 3] for j in range(3)])  
-#             rot_axis_global = R_prev * rotAxList[i]  
-
-#         if jointTypeList[i] == JointType.REVOLUTE:
-#             jac[:3, i] = rot_axis_global.cross(O_n - p_prev) 
-#             jac[3:6, i] = rot_axis_global  
-#         else:  
-#             jac[:3, i] = rot_axis_global  
-#             jac[3:6, i] = Matrix([0, 0, 0]) 
-
-#     return jac
