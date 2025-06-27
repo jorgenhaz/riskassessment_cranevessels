@@ -4,6 +4,7 @@ Risk assessment for crane vessels - framework. Including GUI, quasi-Lagrange for
 ## Running scripts
 Example - running script:
 python -m model_generation.euler_boat.euler_boat_quasi
+To run GUI: python -m GUI.main
 
 ## Venv for Python
 Two venvs - requirements found in txt-files in root. 
